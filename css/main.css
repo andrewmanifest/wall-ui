@@ -92,6 +92,18 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+@font-face {
+		font-family: 'SackersGothic';
+		src: url('../fonts/SackersGothicStd-Heavy.otf') format('opentype');
+		font-weight: normal;
+		font-style: normal;
+
+	}
+	
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'SackersGothic';
+}
+
 
 body {
     background: #d2d2d2;
@@ -101,17 +113,33 @@ body {
 
 #main {
     background: #231f20 url(../img/grid.png) top left no-repeat;
-    width: 1536px;
-    height: 2720px;
+    width: 1536px;  height: 2720px;
     position: absolute; top: 0; left: 0;
+    color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 30px;
 }
 
 #logo {
     position: absolute; top: 100px; left: 225px;
 }
 
+.page {
+    padding: 400px 50px 100px 50px;
+    position: absolute; top: 0; left: 0;
+    width: 1536px;  height: 2720px;
+    box-sizing: border-box;
+}
 
+.tile {
+    background: rgba(0, 0, 0, .8);
+    padding:30px; margin: 20px;
+}
 
+.tile h2 {
+ margin-top: 0;
+ font-size: 1.6em; 
+}
 
 
 
