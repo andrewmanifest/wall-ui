@@ -42,7 +42,7 @@ $(document).ready(function(){
     }
     
     var tileClock = new Clock("clock"); 
-   
+    var weather = new Weather("weather");
     
    
 })
