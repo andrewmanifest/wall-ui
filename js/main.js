@@ -5,7 +5,6 @@ $(document).ready(function(){
         var el = document.getElementById(elId);
      
         if(el) {
-            console.log("---", $("#"+elId));
             $(el).append($("<ul>", {'class': 'clock-group'}));
             $(".clock-group", el).append($("<li>", {'class': 'sec'})).append($("<li>", {'class': 'hour'})).append($("<li>", {'class': 'min'}))
              setInterval( function() {
@@ -43,6 +42,7 @@ $(document).ready(function(){
     
     var tileClock = new Clock("clock"); 
     var weather = new Weather("weather");
-    
+    var twitter = new Twitter("twitter", {searchUrl: '"http://search.twitter.com/search.json?q=%40manifestdigital%20OR%20from%3Amanifestdigital%20OR%20%23MDWall&src=typd"'});
+    //var wallMessage = new Twitter();
    
 })

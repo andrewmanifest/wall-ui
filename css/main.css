@@ -143,6 +143,7 @@ body {
 .tile {
     background: rgba(0, 0, 0, .8);
     padding:30px; margin: 20px;
+    box-sizing: border-box;
     position: relative;
     cursor: none;
 }
@@ -160,7 +161,10 @@ body {
 
 
 #tap-list {
-
+    width: 1396px; /*
+position: absolute;
+    top: 400px; left: 50px;
+*/
 }
 
 #tap-list li {
@@ -177,44 +181,41 @@ body {
 
 #tap-list li .circle-num { position: absolute; top: 8px; left: 0; }
 
-#weather { height: 350px; width: 600px; }
+#weather { height: 400px; width: 640px; }
 #weather .icon { position: absolute; top: 30px; left: 30px; }
-#weather .temp { position: absolute; top: 30px; right: 30px; font-size: 3em; }
+#weather .temp { position: absolute; top: 30px; right: 30px; font-size: 3em; font-family: 'SackersGothic'; }
 #weather .timestamp { position: absolute; bottom: 10px; right: 30px; font-size: .35em; color: rgba(255,255,255,0.25) }
 #weather .wind { position: absolute; top: 155px; right: 30px; }
 #weather .wind img { width: 161px; height: 158px; }
+#weather .update { 
+    width: 15px; height: 15px; 
+    border: 2px solid #fff; border-radius: 4px; 
+    position: absolute; bottom: 15px; left: 15px;
+    cursor: pointer;    
+}
+#weather .update.on { background: #fff; }
 
+#clock {
+    width: 640px; height: 600px; 
+}
 .clock-group {
-	position: relative;
-	width: 600px;
-	height: 600px;
+	position: absolute; top: 0px; left: 15px;
+	height: 600px; width: 600px;
 	background: url(../img/clockface.png);
 	list-style: none;
-	}
+}
 
-.clock-group .sec, .clock-group .min, .clock-group .hour {
-	position: absolute;
-	width: 30px;
-	height: 600px;
-	top: 0px;
-	left: 285px;
-	}
+.clock-group .sec, .clock-group .min, .clock-group .hour { position: absolute; width: 30px; height: 600px; top: 0px; left: 285px; }
+.clock-group .sec { background: url(../img/sechand.png); z-index: 3; }   
+.clock-group .min { background: url(../img/minhand.png); z-index: 2; }
+.clock-group .hour { background: url(../img/hourhand.png); z-index: 1; }
 
-.clock-group .sec {
-	background: url(../img/sechand.png);
-	z-index: 3;
-   	}
-   
-.clock-group .min {
-	background: url(../img/minhand.png);
-	z-index: 2;
-   	}
-   
-.clock-group .hour {
-	background: url(../img/hourhand.png);
-	z-index: 1;
-   	}
 
+#twitter {}
+#twitter .tweet-list {}
+#twitter .tweet-list li { position: relative; padding-left: 100px; margin-bottom: 40px; min-height: 80px; }
+#twitter .tweet-list li:last-of-type { margin-bottom: 0; }
+#twitter .tweet-list li img { position: absolute; top: 0; left: 0; width: 80px; height: 80px; border-radius: 10px; }
 
 /* ==========================================================================
    Helper classes

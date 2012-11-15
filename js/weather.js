@@ -7,18 +7,21 @@ var Weather = function(elId){
     var forecastURL = "http://api.wunderground.com/api/991718599967e222/geolookup/conditions/q/IL/Chicago.json";
     var code = 0;
     var data, logData;
-    
+    var update = true;
     
       
     var getData = function(){
-        $.ajax({
+        if(update) {
+            $.ajax({
         	type:"GET",
         	url:forecastURL,
         	dataType: "jsonp",
         	success: function(_data) {
             	updateData(_data);
         	}
-		});
+        	});
+        }
+        
     }
     
 	var updateData = function(_data){
@@ -86,4 +89,13 @@ var Weather = function(elId){
 	if(el) getData();
 	var dataTimer = setInterval(getData, 1000 * 60 * 5);
 	$('.wind', el).hide();
+	
+	$('.update', el).click(function(){
+	   if($(this).hasClass('on')) {
+    	   update = false;
+	   } else {
+    	   update = true;
+	   }
+	   $(this).toggleClass('on')
+	})
 }
