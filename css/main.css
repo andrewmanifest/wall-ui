@@ -115,6 +115,7 @@ body {
     background: #d2d2d2;
     margin: 0; padding: 0;
     position: relative;
+    
 }
 
 #main {
@@ -124,6 +125,7 @@ body {
     color: #fff;
     font-family: 'Jubilat', Helvetica, Arial, sans-serif;
     font-size: 34px;
+
 }
 
 #logo {
@@ -135,12 +137,14 @@ body {
     position: absolute; top: 0; left: 0;
     width: 1536px;  height: 2720px;
     box-sizing: border-box;
+    
 }
 
 .tile {
     background: rgba(0, 0, 0, .8);
     padding:30px; margin: 20px;
     position: relative;
+    cursor: none;
 }
 
 .tile ol, .tile ul {
