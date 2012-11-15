@@ -180,6 +180,9 @@ body {
 #weather { height: 350px; width: 600px; }
 #weather .icon { position: absolute; top: 30px; left: 30px; }
 #weather .temp { position: absolute; top: 30px; right: 30px; font-size: 3em; }
+#weather .timestamp { position: absolute; bottom: 10px; right: 30px; font-size: .35em; color: rgba(255,255,255,0.25) }
+#weather .wind { position: absolute; top: 155px; right: 30px; }
+#weather .wind img { width: 161px; height: 158px; }
 
 .clock-group {
 	position: relative;
