@@ -181,7 +181,7 @@ body {
 #weather .icon { position: absolute; top: 30px; left: 30px; }
 #weather .temp { position: absolute; top: 30px; right: 30px; font-size: 3em; }
 
-#clock {
+.clock-group {
 	position: relative;
 	width: 600px;
 	height: 600px;
@@ -189,7 +189,7 @@ body {
 	list-style: none;
 	}
 
-#sec, #min, #hour {
+.clock-group .sec, .clock-group .min, .clock-group .hour {
 	position: absolute;
 	width: 30px;
 	height: 600px;
@@ -197,25 +197,20 @@ body {
 	left: 285px;
 	}
 
-#sec {
+.clock-group .sec {
 	background: url(../img/sechand.png);
 	z-index: 3;
    	}
    
-#min {
+.clock-group .min {
 	background: url(../img/minhand.png);
 	z-index: 2;
    	}
    
-#hour {
+.clock-group .hour {
 	background: url(../img/hourhand.png);
 	z-index: 1;
    	}
-   	
-p {
-    text-align: center; 
-    padding: 10px 0 0 0;
-    }
 
 
 /* ==========================================================================
