@@ -2,7 +2,7 @@ var Twitter = function(elId, options) {
     
     var defaults = {};
 	var options = $.extend(defaults, options);		
-	
+
     var el = document.getElementById(elId);
     var searchURL = "http://search.twitter.com/search.json?q=%40manifestdigital%20OR%20from%3Amanifestdigital%20OR%20%23MDWall&src=typd";
     
