@@ -93,12 +93,18 @@ textarea {
    Author's custom styles
    ========================================================================== */
 @font-face {
-		font-family: 'SackersGothic';
-		src: url('../fonts/SackersGothicStd-Heavy.otf') format('opentype');
-		font-weight: normal;
-		font-style: normal;
+    font-family: 'SackersGothic';
+    src: url('../fonts/SackersGothicStd-Heavy.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
-	}
+@font-face {
+    font-family: 'Jubilat';
+    src: url('../fonts/Jubilat-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 	
 h1, h2, h3, h4, h5, h6 {
     font-family: 'SackersGothic';
@@ -116,8 +122,8 @@ body {
     width: 1536px;  height: 2720px;
     position: absolute; top: 0; left: 0;
     color: #fff;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 30px;
+    font-family: 'Jubilat', Helvetica, Arial, sans-serif;
+    font-size: 34px;
 }
 
 #logo {
@@ -136,12 +142,35 @@ body {
     padding:30px; margin: 20px;
 }
 
+.tile ol, .tile ul {
+    margin: 0; padding: 0;
+}
+
 .tile h2 {
- margin-top: 0;
+ margin-top: 0; margin-bottom: .2em;
  font-size: 1.6em; 
+ text-transform: uppercase;
 }
 
 
+
+#tap-list {
+
+}
+
+#tap-list li {
+    list-style: none;
+    padding-left: 3em; margin-right: 2em;
+    margin-bottom: .8em;
+    float: left; position: relative;
+}
+
+#tap-list li .title {
+    font-size: 1.2em;
+    display: block;
+}
+
+#tap-list li .circle-num { position: absolute; top: 8px; left: 0; }
 
 
 
