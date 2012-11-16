@@ -215,6 +215,7 @@ body {
     width: 688px; height: 600px;
     position: absolute; top: 695px; right: 50px;
     -webkit-transition: all .5s ease-out;
+    -webkit-perspective: 600px;
 }
 #twitter .tweet-list { -webkit-transition: all .5s ease-out; }
 .tweet-list li { position: relative; padding-left: 100px; margin-bottom: 40px; min-height: 80px; }
@@ -222,7 +223,7 @@ body {
 .tweet-list li img { position: absolute; top: 0; left: 0; width: 80px; height: 80px; border-radius: 10px; }
 
 #twitter .tweet-list .text { height: 450px; font-size: 200px; overflow: hidden; }
-#twitter .tweet-list.transition { -webkit-transform: scale(.5); opacity: 0; }
+#twitter .tweet-list.transition { opacity: 0; -webkit-transform: rotateX(50deg) scale(.4); -webkit-transform-style: preserve-3d; }
 
 #wall-message { 
     width: 688px; height: 400px;
