@@ -24,7 +24,7 @@ var Twitter = function(elId, options) {
         	success: function(_data) {
         	   
             	//updateData(_data);
-            	console.log("search:", _data);
+            	//console.log("search:", _data);
             	buildList(_data);
         	}
 		});

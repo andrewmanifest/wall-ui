@@ -8,10 +8,12 @@ var Weather = function(elId){
     var code = 0;
     var data, logData;
     var update = (String(window.location).search('localhost') > 0) ? false : true;
-
+    var doOnce = true;
+    var isNight = false;
   
     var getData = function(){
-        if(update) {
+        if(update || doOnce) {
+            doOnce = false;
             $.ajax({
         	type:"GET",
         	url:forecastURL,
@@ -26,6 +28,8 @@ var Weather = function(elId){
     
 	var updateData = function(_data){
     	data = _data;
+    	var cHour = new Date().getHours();
+    	isNight = (cHour < 6 || cHour > 17) ? true : false;
     	if(!logData) console.log("forecast:", data );
     	logData = true;
     	$('.timestamp', el).empty().text(new Date());
@@ -80,6 +84,22 @@ var Weather = function(elId){
         	   path = 'img/weather-lightning.png';
         	   break;
         	
+    	}
+    	
+    	if(isNight) {
+        	switch(code){
+        	
+        	case 'clear':
+        	case 'mostlysunny':
+        	case 'sunny':
+        	   path = 'img/weather-night.png';
+        	   break;
+            case 'mostlycloudy':
+            case 'partlycloudy':
+            case 'partlysunny':
+        	   path = 'img/weather-partlycloudy-night.png';
+        	   break;
+            }
     	}
     	
     	return path;
