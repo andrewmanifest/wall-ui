@@ -31,13 +31,18 @@ var Twitter = function(elId, options) {
     }
     
     function buildList(data){
-        $('.tweet-list', el).empty();
-        for(var i = 0; i<options.displayCount; i++){
+        $(el).addClass('transition')
+        setTimeout(function(){
+            $(el).removeClass('transition');
+            $('.tweet-list', el).empty();
+            for(var i = 0; i<options.displayCount; i++){
             if(data.results[i]){
              var randIndex = Math.floor(Math.random()*data.results.length);
              addTweet(randIndex, data.results);
             }
-        }
+            }
+        }, 500)
+       
         
         
     }

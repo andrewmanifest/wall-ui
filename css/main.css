@@ -214,14 +214,13 @@ body {
 #twitter { 
     width: 688px; height: 600px;
     position: absolute; top: 695px; right: 50px;
-}
-.tweet-list {}
+    -webkit-transition: all .5s ease-out; }
 .tweet-list li { position: relative; padding-left: 100px; margin-bottom: 40px; min-height: 80px; }
 .tweet-list li:last-of-type { margin-bottom: 0; }
 .tweet-list li img { position: absolute; top: 0; left: 0; width: 80px; height: 80px; border-radius: 10px; }
 
 #twitter .tweet-list .text { height: 450px; font-size: 200px; overflow: hidden; }
-
+#twitter.transition { -webkit-transform: scale(.5); opacity: 0; }
 
 #wall-message { 
     width: 688px; height: 400px;
