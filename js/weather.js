@@ -7,7 +7,7 @@ var Weather = function(elId){
     var forecastURL = "http://api.wunderground.com/api/991718599967e222/geolookup/conditions/q/IL/Chicago.json";
     var code = 0;
     var data, logData;
-    var update = false //true;
+    var update = true;
     
       
     var getData = function(){
