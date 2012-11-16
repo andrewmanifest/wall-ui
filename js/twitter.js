@@ -1,9 +1,11 @@
 var Twitter = function(elId, options) {
     
     var defaults = {
-        searchUrl: "http://search.twitter.com/search.json?q=404&src=typd",
+        baseUrl: "http://search.twitter.com/search.json?q=",
+        searchString: "404",
         displayCount: 5,
-        updateInterval: 10000
+        updateInterval: 10000,
+        filters:[]
     };
 	var options = $.extend(defaults, options);		
 
@@ -19,7 +21,7 @@ var Twitter = function(elId, options) {
    function getData(){
         $.ajax({
         	type:"GET",
-        	url:searchURL,
+        	url:options.baseUrl+encodeURIComponent(options.searchString),
         	dataType: "jsonp",
         	success: function(_data) {
         	   

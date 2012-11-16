@@ -42,7 +42,7 @@ $(document).ready(function(){
     
     var tileClock = new Clock("clock"); 
     var weather = new Weather("weather");
-    var twitter = new Twitter("twitter", {updateInterval: 1000*10, displayCount: 1, searchUrl: "http://search.twitter.com/search.json?q=%40manifestdigital%20OR%20from%3Amanifestdigital&src=typd"});
-    var wallMessage = new Twitter("wall-message", {updateInterval: 1000*60, displayCount: 1, searchUrl: "http://search.twitter.com/search.json?q=%23MDWall&src=typd"});
+    var twitter = new Twitter("twitter", {updateInterval: 1000*10, displayCount: 1, searchString: "@manifestdigital OR from:manifestdigital"});
+    var wallMessage = new Twitter("wall-message", {updateInterval: 1000*60, displayCount: 1, searchString: "#MDWall"});
    
 })

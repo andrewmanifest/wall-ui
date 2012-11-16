@@ -8,7 +8,7 @@ var Weather = function(elId){
     var code = 0;
     var data, logData;
     var update = (String(window.location).search('localhost') > 0) ? false : true;
-    var doOnce = false;
+    var doOnce = true;
     var isNight = false;
   
     var getData = function(){
