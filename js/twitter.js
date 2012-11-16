@@ -31,9 +31,9 @@ var Twitter = function(elId, options) {
     }
     
     function buildList(data){
-        $(el).addClass('transition')
+        $('.tweet-list', el).addClass('transition')
         setTimeout(function(){
-            $(el).removeClass('transition');
+            $('.tweet-list', el).removeClass('transition');
             $('.tweet-list', el).empty();
             for(var i = 0; i<options.displayCount; i++){
             if(data.results[i]){
