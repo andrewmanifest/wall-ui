@@ -151,6 +151,7 @@ body {
 .tile ol, .tile ul {
     margin: 0; padding: 0;
 }
+.tile li { list-style: none; }
 
 .tile h2 {
  margin-top: 0; margin-bottom: .2em;
@@ -162,7 +163,7 @@ body {
 
 #tap-list {
     width: 1396px;height: 275px;
-/*     position: absolute; top: 400px; left: 50px; */
+    position: absolute; top: 400px; left: 50px;
 }
 
 #tap-list li {
@@ -179,7 +180,7 @@ body {
 
 #tap-list li .circle-num { position: absolute; top: 8px; left: 0; }
 
-#weather { height: 400px; width: 688px; }
+#weather { height: 400px; width: 688px; position: absolute; top: 695px; left: 50px; }
 #weather .icon { position: absolute; top: 30px; left: 30px; }
 #weather .temp { position: absolute; top: 30px; right: 30px; font-size: 3em; font-family: 'SackersGothic'; }
 #weather .timestamp { position: absolute; bottom: 10px; right: 30px; font-size: .35em; color: rgba(255,255,255,0.25) }
@@ -195,9 +196,10 @@ body {
 
 #clock {
     width: 688px; height: 600px; 
+    position: absolute; top: 1115px; left: 50px;
 }
 .clock-group {
-	position: absolute; top: 0px; left: 15px;
+	position: absolute; top: 0px; left: 40px;
 	height: 600px; width: 600px;
 	background: url(../img/clockface.png);
 	list-style: none;
@@ -210,13 +212,22 @@ body {
 
 
 #twitter { 
-/*     width: 688px; */
-/*     position: absolute; top: 695px; right: 50px; */
+    width: 688px; height: 600px;
+    position: absolute; top: 695px; right: 50px;
 }
-#twitter .tweet-list {}
-#twitter .tweet-list li { position: relative; padding-left: 100px; margin-bottom: 40px; min-height: 80px; }
-#twitter .tweet-list li:last-of-type { margin-bottom: 0; }
-#twitter .tweet-list li img { position: absolute; top: 0; left: 0; width: 80px; height: 80px; border-radius: 10px; }
+.tweet-list {}
+.tweet-list li { position: relative; padding-left: 100px; margin-bottom: 40px; min-height: 80px; }
+.tweet-list li:last-of-type { margin-bottom: 0; }
+.tweet-list li img { position: absolute; top: 0; left: 0; width: 80px; height: 80px; border-radius: 10px; }
+
+#twitter .tweet-list .text { height: 450px; font-size: 200px; overflow: hidden; }
+
+
+#wall-message { 
+    width: 688px; height: 400px;
+    position: absolute; top: 1315px; right: 50px;
+}
+#wall-message  .tweet-list .text { height: 250px; font-size: 200px; overflow: hidden; }
 
 /* ==========================================================================
    Helper classes

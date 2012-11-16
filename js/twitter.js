@@ -1,10 +1,14 @@
 var Twitter = function(elId, options) {
     
-    var defaults = {};
+    var defaults = {
+        searchUrl: "http://search.twitter.com/search.json?q=404&src=typd",
+        displayCount: 5,
+        updateInterval: 10000
+    };
 	var options = $.extend(defaults, options);		
 
     var el = document.getElementById(elId);
-    var searchURL = "http://search.twitter.com/search.json?q=%40manifestdigital%20OR%20from%3Amanifestdigital%20OR%20%23MDWall&src=typd";
+    var searchURL = options.searchUrl;
     
     if(!el) console.error("No Element");
     
@@ -27,14 +31,25 @@ var Twitter = function(elId, options) {
     }
     
     function buildList(data){
-        var tweetLength = 5
-        for(var i = 0; i<tweetLength; i++){
+        $('.tweet-list', el).empty();
+        for(var i = 0; i<options.displayCount; i++){
             if(data.results[i]){
-                var tweet = $("<li>", {'class':'tweet'});
-                $(tweet).append($("<img>", {'src':data.results[i].profile_image_url}))
-                        .append($("<div>", {'class':'text'}).html(data.results[i].text));
-                $('.tweet-list', el).append(tweet);
+             var randIndex = Math.floor(Math.random()*data.results.length);
+             addTweet(randIndex, data.results);
             }
         }
+        
+        
     }
+    
+    function addTweet(index, list) {
+        var tweet = $("<li>", {'class':'tweet'});
+        $(tweet).append($("<img>", {'src':list[index].profile_image_url}))
+                .append($("<div>", {'class':'text'}).html(list[index].text));
+        $('.tweet-list', el).append(tweet);
+        //$('.text', tweet).fitText();
+        $('.text', tweet).fitToHeight();
+    }
+    
+    var intervalTimer = setInterval(getData, options.updateInterval);
 }
