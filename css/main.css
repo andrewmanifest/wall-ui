@@ -236,6 +236,17 @@ body {
 #wall-message .tweet-list { -webkit-transition: all .5s ease-out; }
 #wall-message .tweet-list.transition { opacity: 0; -webkit-transform: rotateX(50deg) scale(.4); -webkit-transform-style: preserve-3d; }
 
+#instagram {
+    width: 1396px;height: 355px;
+    position: absolute; top: 1735px; left: 50px;
+}
+
+#instagram .instagram-placeholder {
+    float: left; margin-right: 25px;
+}
+#instagram .instagram-placeholder:last-of-type { margin: 0; }
+#instagram .instagram-placeholder img { width: 200px; height: 200px; }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

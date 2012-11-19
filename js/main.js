@@ -44,5 +44,14 @@ $(document).ready(function(){
     var weather = new Weather("weather");
     var twitter = new SingleTwitter("twitter", {updateInterval: 1000*20, searchString: "@manifestdigital OR from:manifestdigital"});
     var wallMessage = new SingleTwitter("wall-message", {updateInterval: 1000*8, searchString: "#MDWall"});
-   
+    
+    //var instagram = new Instagram("instagram", {searchString:"#campvibes"});
+    
+    $("#instagram").instagram({
+        clientId: '494a2117c72a4541a85ab40d77ff3fc7',
+        show: '6',
+        updateInterval: 1000*60*5,
+        search: {lat:'41.886688', lng:'-87.627811', dist: '500'},
+        image_size: 'low_resolution'
+    })
 })
