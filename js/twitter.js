@@ -56,8 +56,9 @@ var SingleTwitter = function(elId, options) {
             if(tweetIndex >= latestSearch.results.length-1){
                 tweetIndex = 0;
                 clearInterval(intervalTimer);
+                setTimeout(getData, options.updateInterval)
                 console.log("reset Tweet");
-                getData();
+                //getData();
             }
            
         }, 500);
