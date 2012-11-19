@@ -1,4 +1,4 @@
-var Twitter = function(elId, options) {
+var SingleTwitter = function(elId, options) {
     
     var defaults = {
         baseUrl: "http://search.twitter.com/search.json?q=",
@@ -11,6 +11,9 @@ var Twitter = function(elId, options) {
 
     var el = document.getElementById(elId);
     var searchURL = options.searchUrl;
+    var tweetIndex = 0;
+    var latestSearch;
+    var intervalTimer
     
     if(!el) console.error("No Element");
     
@@ -26,27 +29,38 @@ var Twitter = function(elId, options) {
         	success: function(_data) {
         	   
             	//updateData(_data);
-            	//console.log("search:", _data);
-            	buildList(_data);
+            	console.log("search:", _data);
+            	latestSearch = _data;
+            	intervalTimer = setInterval(findLatest, options.updateInterval);
+            	findLatest();
         	}
 		});
     }
     
-    function buildList(data){
+    function buildList(){
+    }
+    
+    function findLatest() {
         $('.tweet-list', el).addClass('transition')
         setTimeout(function(){
             $('.tweet-list', el).removeClass('transition');
             $('.tweet-list', el).empty();
-            for(var i = 0; i<options.displayCount; i++){
-            if(data.results[i]){
-             var randIndex = Math.floor(Math.random()*data.results.length);
-             addTweet(randIndex, data.results);
+            
+            if(latestSearch.results[tweetIndex]){
+             //var randIndex = Math.floor(Math.random()*latestSearch.results.length);
+             console.log("get Tweet:", tweetIndex);
+             addTweet(tweetIndex, latestSearch.results);
             }
+            
+            tweetIndex += 1;
+            if(tweetIndex >= latestSearch.results.length-1){
+                tweetIndex = 0;
+                clearInterval(intervalTimer);
+                console.log("reset Tweet");
+                getData();
             }
-        }, 500)
-       
-        
-        
+           
+        }, 500);
     }
     
     function addTweet(index, list) {
@@ -58,5 +72,5 @@ var Twitter = function(elId, options) {
         $('.text', tweet).fitToHeight();
     }
     
-    var intervalTimer = setInterval(getData, options.updateInterval);
+    
 }

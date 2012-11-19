@@ -183,7 +183,8 @@ body {
 #weather { height: 400px; width: 688px; position: absolute; top: 695px; left: 50px; }
 #weather .icon { position: absolute; top: 30px; left: 30px; }
 #weather .temp { position: absolute; top: 30px; right: 30px; font-size: 3.5em; font-family: 'SackersGothic'; }
-#weather .timestamp { position: absolute; bottom: 10px; right: 30px; font-size: .35em; color: rgba(255,255,255,0.25) }
+#weather .timestamp { position: absolute; bottom: 10px; right: 30px; font-size: .35em; color: rgba(255,255,255,0.25); display: none; }
+#weather:hover .timestamp { display: block; }
 #weather .wind { position: absolute; top: 165px; right: -25px; }
 #weather .wind img { width: 75%; height: 75%; }
 #weather .update { 
@@ -228,8 +229,12 @@ body {
 #wall-message { 
     width: 688px; height: 400px;
     position: absolute; top: 1315px; right: 50px;
+    -webkit-transition: all .5s ease-out;
+    -webkit-perspective: 600px;
 }
-#wall-message  .tweet-list .text { height: 250px; font-size: 200px; overflow: hidden; }
+#wall-message .tweet-list .text { height: 250px; font-size: 200px; overflow: hidden; }
+#wall-message .tweet-list { -webkit-transition: all .5s ease-out; }
+#wall-message .tweet-list.transition { opacity: 0; -webkit-transform: rotateX(50deg) scale(.4); -webkit-transform-style: preserve-3d; }
 
 /* ==========================================================================
    Helper classes
