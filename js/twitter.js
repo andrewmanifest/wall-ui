@@ -76,11 +76,17 @@ var SingleTwitter = function(elId, options) {
     function addTweet(index, list) {
         var tweet = $("<li>", {'class':'tweet'});
         $(tweet).append($("<img>", {'src':list[index].profile_image_url}))
-                .append($("<div>", {'class':'text'}).html(list[index].text));
+                .append($("<div>", {'class':'text'}).html(checkFilters(list[index].text)));
         $('.tweet-list', el).append(tweet);
         //$('.text', tweet).fitText();
         $('.text', tweet).fitToHeight();
     }
     
+    function checkFilters(text){
+        for (var i = 0; i<options.filters.length; i++){
+            text = text.replace(options.filters[i].search, options.filters[i].replace)
+        }
+        return text;
+    }
     
 }
