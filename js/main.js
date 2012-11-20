@@ -42,8 +42,8 @@ $(document).ready(function(){
     
     var tileClock = new Clock("clock"); 
     var weather = new Weather("weather");
-    var twitter = new SingleTwitter("twitter", {updateInterval: 1000*20, searchString: "@manifestdigital OR from:manifestdigital"});
-    var wallMessage = new SingleTwitter("wall-message", {updateInterval: 1000*8, searchString: "#MDWall"});
+    var twitter = new SingleTwitter("twitter", {updateInterval: 1000*10, priorityInterval: 1000*30, cycleDepth: 5, searchString: "@manifestdigital OR from:manifestdigital"});
+    var wallMessage = new SingleTwitter("wall-message", {updateInterval: 1000*5, priorityInterval: 1000*20, cycleDepth: 5, searchString: "#MDWall"});
     
     //var instagram = new Instagram("instagram", {searchString:"#campvibes"});
     

@@ -107,7 +107,7 @@ var Weather = function(elId){
 	
 	// Setup
 	if(el) getData();
-	var dataTimer = setInterval(getData, 1000 * 60 * 5);
+	var dataTimer = setInterval(getData, 1000 * 60 * 10);
 	$('.wind', el).hide();
 	
 	$('.update', el).click(function(){

@@ -5,6 +5,8 @@ var SingleTwitter = function(elId, options) {
         searchString: "404",
         displayCount: 5,
         updateInterval: 10000,
+        priorityInterval: null,
+        cycleDepth: null,
         filters:[]
     };
 	var options = $.extend(defaults, options);		
@@ -31,7 +33,8 @@ var SingleTwitter = function(elId, options) {
             	//updateData(_data);
             	console.log("search:", _data);
             	latestSearch = _data;
-            	intervalTimer = setInterval(findLatest, options.updateInterval);
+            	intervalTimer = setInterval(findLatest, options.priorityInterval || options.updateInterval);
+          
             	findLatest();
         	}
 		});
@@ -52,8 +55,14 @@ var SingleTwitter = function(elId, options) {
              addTweet(tweetIndex, latestSearch.results);
             }
             
+            if(tweetIndex == 1){
+                clearInterval(intervalTimer);
+                intervalTimer = setInterval(findLatest, options.updateInterval);
+            }
+            
             tweetIndex += 1;
-            if(tweetIndex >= latestSearch.results.length-1){
+            
+            if(tweetIndex >= latestSearch.results.length-1 || tweetIndex >= options.cycleDepth){
                 tweetIndex = 0;
                 clearInterval(intervalTimer);
                 setTimeout(getData, options.updateInterval)
