@@ -119,16 +119,22 @@
             var length = typeof res.data != 'undefined' ? res.data.length : 0;
             var limit = settings.show != null && settings.show < length ? settings.show : length;
             console.log("instagram:", res);
-            $('.instagram-placeholder', that).remove();
-            if (limit > 0) {
-              for (var i = 0; i < limit; i++) {
-                that.append(createPhotoElement(res.data[i]));
-              }
-            }
-            else {
-              that.append(createEmptyElement());
-            }
-    
+            $('.instagram-placeholder', that).fadeOut(250, function(){
+              $(this).remove();  
+            })
+            setTimeout(function(){
+                if (limit > 0) {
+                  for (var i = 0; i < limit; i++) {
+                    that.append(createPhotoElement(res.data[i]));
+                  }
+                  $('.instagram-placeholder', that).hide().fadeIn(250)
+                }
+                else {
+                  that.append(createEmptyElement());
+                }
+
+            }, 300)
+                
             settings.onComplete != null && typeof settings.onComplete == 'function' && settings.onComplete(res.data, res);
           }
         });
