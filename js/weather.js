@@ -29,7 +29,7 @@ var Weather = function(elId){
 	var updateData = function(_data){
     	data = _data;
     	var cHour = new Date().getHours();
-    	isNight = (cHour < 6 || cHour > 17) ? true : false;
+    	isNight = (cHour < 5 || cHour > 17) ? true : false;
     	if(!logData) console.log("forecast:", data );
     	logData = true;
     	$('.timestamp', el).empty().text(new Date());
