@@ -174,7 +174,7 @@ body {
 }
 
 #tap-list li .title {
-    font-size: 1.4em;
+    font-size: 1.5em;
     display: block;
 }
 
@@ -238,7 +238,7 @@ body {
 
 #instagram {
     width: 1396px;height: 355px;
-    position: absolute; top: 1735px; left: 50px;
+    position: absolute; top: 2310px; left: 50px;
 }
 
 #instagram .instagram-placeholder {
@@ -246,6 +246,24 @@ body {
 }
 #instagram .instagram-placeholder:last-of-type { margin: 0; }
 #instagram .instagram-placeholder img { width: 200px; height: 200px; }
+
+
+#facebook { width:1396px; height:450px; position:absolute; top:1735px; }
+
+
+.fb-wrapper{ width:1280px; height:340px; overflow:hidden; position: absolute; }
+.fb { width:20000em; position:absolute; height:300px;  }
+.fb .item { width: 300px; height: 300px; float:left; margin-left: 20px;
+-webkit-transition: all 1s ease-in;
+-moz-transition: all 1s ease-in;
+-ms-transition: all 1s ease-in;
+-o-transition: all 1s ease-in;
+transition: all 1s ease-in; }
+
+
+
+
+
 
 /* ==========================================================================
    Helper classes

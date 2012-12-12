@@ -1,6 +1,12 @@
 
 $(document).ready(function(){
    
+   
+		$(".fb").facebookPhotoId({ 'facebookAlbumId' : '10151159153399514' });
+		$(".fb").carousel({
+				'carouselItem'  : '.item', 
+				'duration' : 500
+		});
     var Clock = function(elId) {
         var el = document.getElementById(elId);
      
@@ -42,6 +48,7 @@ $(document).ready(function(){
     
     var tileClock = new Clock("clock"); 
     var weather = new Weather("weather");
+  
     var twitter = new SingleTwitter("twitter", {updateInterval: 1000*10, priorityInterval: 1000*30, cycleDepth: 5, searchString: "@manifestdigital OR from:manifestdigital"});
     var wallMessage = new SingleTwitter("wall-message", {updateInterval: 1000*5,
                                                          priorityInterval: 1000*20,
@@ -64,4 +71,8 @@ $(document).ready(function(){
         search: {lat:'41.886688', lng:'-87.627811', dist: '500'},
         image_size: 'low_resolution'
     })
+	
+	
+   
+   
 })
