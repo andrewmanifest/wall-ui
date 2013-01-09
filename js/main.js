@@ -2,11 +2,7 @@
 $(document).ready(function(){
    
    
-		$(".fb").facebookPhotoId({ 'facebookAlbumId' : '10151159153399514' });
-		$(".fb").carousel({
-				'carouselItem'  : '.item', 
-				'duration' : 500
-		});
+		
     var Clock = function(elId) {
         var el = document.getElementById(elId);
      
@@ -47,8 +43,9 @@ $(document).ready(function(){
     }
     
     var tileClock = new Clock("clock"); 
+	
     var weather = new Weather("weather");
-  
+  /*
     var twitter = new SingleTwitter("twitter", {updateInterval: 1000*10, priorityInterval: 1000*30, cycleDepth: 5, searchString: "@manifestdigital OR from:manifestdigital"});
     var wallMessage = new SingleTwitter("wall-message", {updateInterval: 1000*5,
                                                          priorityInterval: 1000*20,
@@ -61,7 +58,7 @@ $(document).ready(function(){
                                                                   ]
                                                          });
                                                          // (^@([A-Za-z0-9_]+))
-    
+    */
     //var instagram = new Instagram("instagram", {searchString:"#campvibes"});
     
     $("#instagram").instagram({
@@ -72,6 +69,14 @@ $(document).ready(function(){
         image_size: 'low_resolution'
     })
 	
+	
+	
+		$(".fb").facebookPhotoId({ 'facebookAlbumId' : '10151159153399514' });
+		
+		$(".fb").carousel({
+				'carouselItem'  : '.item', 
+				'duration' : 500
+		});
 	
    
    
