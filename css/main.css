@@ -92,31 +92,173 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+@font-face {
+    font-family: 'SackersGothic';
+    src: url('../fonts/SackersGothicStd-Heavy.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jubilat';
+    src: url('../fonts/Jubilat-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+	
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'SackersGothic';
+}
+
 
 body {
     background: #d2d2d2;
     margin: 0; padding: 0;
     position: relative;
+    
 }
 
 #main {
     background: #231f20 url(../img/grid.png) top left no-repeat;
-    width: 1536px;
-    height: 2720px;
+    width: 1536px;  height: 2720px;
     position: absolute; top: 0; left: 0;
+    color: #fff;
+    font-family: 'Jubilat', Helvetica, Arial, sans-serif;
+    font-size: 34px;
+
 }
 
 #logo {
     position: absolute; top: 100px; left: 225px;
 }
 
+.page {
+    padding: 400px 50px 100px 50px;
+    position: absolute; top: 0; left: 0;
+    width: 1536px;  height: 2720px;
+    box-sizing: border-box;
+    
+}
+
+.tile {
+    background: rgba(0, 0, 0, .8);
+    padding:30px; margin: 20px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: none;
+}
+
+.tile ol, .tile ul {
+    margin: 0; padding: 0;
+}
+.tile li { list-style: none; }
+
+.tile h2 {
+ margin-top: 0; margin-bottom: .2em;
+ font-size: 1.6em; 
+ text-transform: uppercase;
+}
 
 
 
+#tap-list {
+    width: 1396px;height: 275px;
+    position: absolute; top: 400px; left: 50px;
+}
+
+#tap-list li {
+    list-style: none;
+    padding-left: 3em; margin-right: 2em;
+    margin-bottom: .8em;
+    float: left; position: relative;
+}
+
+#tap-list li .title {
+    font-size: 1.5em;
+    display: block;
+}
+
+#tap-list li .circle-num { position: absolute; top: 8px; left: 0; }
+
+#weather { height: 400px; width: 688px; position: absolute; top: 695px; left: 50px; }
+#weather .icon { position: absolute; top: 30px; left: 30px; }
+#weather .temp { position: absolute; top: 30px; right: 30px; font-size: 3.5em; font-family: 'SackersGothic'; }
+#weather .timestamp { position: absolute; bottom: 10px; right: 30px; font-size: .35em; color: rgba(255,255,255,0.25); display: none; }
+#weather:hover .timestamp { display: block; }
+#weather .wind { position: absolute; top: 165px; right: -25px; }
+#weather .wind img { width: 75%; height: 75%; }
+#weather .update { 
+    width: 15px; height: 15px; 
+    border: 2px solid #fff; border-radius: 4px; 
+    position: absolute; bottom: 15px; left: 15px;
+    cursor: pointer;    
+}
+#weather .update.on { background: #fff; }
+
+#clock {
+    width: 688px; height: 600px; 
+    position: absolute; top: 1115px; left: 50px;
+}
+.clock-group {
+	position: absolute; top: 0px; left: 40px;
+	height: 600px; width: 600px;
+	background: url(../img/clockface.png);
+	list-style: none;
+}
+
+.clock-group .sec, .clock-group .min, .clock-group .hour { position: absolute; width: 30px; height: 600px; top: 0px; left: 285px; }
+.clock-group .sec { background: url(../img/sechand.png); z-index: 3; }   
+.clock-group .min { background: url(../img/minhand.png); z-index: 2; }
+.clock-group .hour { background: url(../img/hourhand.png); z-index: 1; }
 
 
+#twitter { 
+    width: 688px; height: 600px;
+    position: absolute; top: 695px; right: 50px;
+    -webkit-transition: all .5s ease-out;
+    -webkit-perspective: 600px;
+}
+#twitter .tweet-list { -webkit-transition: all .5s ease-out; }
+.tweet-list li { position: relative; padding-left: 100px; margin-bottom: 40px; min-height: 80px; }
+.tweet-list li:last-of-type { margin-bottom: 0; }
+.tweet-list li img { position: absolute; top: 0; left: 0; width: 80px; height: 80px; border-radius: 10px; }
+
+#twitter .tweet-list .text { height: 450px; font-size: 200px; overflow: hidden; }
+#twitter .tweet-list.transition { opacity: 0; -webkit-transform: rotateX(50deg) scale(.4); -webkit-transform-style: preserve-3d; }
+
+#wall-message { 
+    width: 688px; height: 400px;
+    position: absolute; top: 1315px; right: 50px;
+    -webkit-transition: all .5s ease-out;
+    -webkit-perspective: 600px;
+}
+#wall-message .tweet-list .text { height: 250px; font-size: 200px; overflow: hidden; }
+#wall-message .tweet-list { -webkit-transition: all .5s ease-out; }
+#wall-message .tweet-list.transition { opacity: 0; -webkit-transform: rotateX(50deg) scale(.4); -webkit-transform-style: preserve-3d; }
+
+#instagram {
+    width: 1396px;height: 355px;
+    position: absolute; top: 2310px; left: 50px;
+}
+
+#instagram .instagram-placeholder {
+    float: left; margin-right: 25px;
+}
+#instagram .instagram-placeholder:last-of-type { margin: 0; }
+#instagram .instagram-placeholder img { width: 200px; height: 200px; }
 
 
+#facebook { width:1396px; height:450px; position:absolute; top:1735px; }
+
+
+.fb-wrapper{ width:1280px; height:340px; overflow:hidden; position: absolute; }
+.fb { width:20000em; position:absolute; height:300px;  }
+.fb .item { width: 300px; height: 300px; float:left; margin-left: 20px;
+-webkit-transition: all 1s ease-in;
+-moz-transition: all 1s ease-in;
+-ms-transition: all 1s ease-in;
+-o-transition: all 1s ease-in;
+transition: all 1s ease-in; }
 
 
 
